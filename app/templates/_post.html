@@ -1,0 +1,48 @@
+<table class="table table-hover">
+    <tr>
+        <td width="58px">
+            <a href="{{ url_for('user', username=post.author.username) }}">
+                <img src="{{ post.author.avatar(58) }}" />
+            </a>
+        </td>
+        <td>
+            <a href="{{ url_for('user', username=post.author.username) }}">
+                {{ post.author.username }}
+            </a>
+            said {{ moment(post.timestamp).fromNow() }}:
+            <br>
+            {{ post.body }}
+            <br><br>
+            <span style="color:slategray">
+                {% if post.post_likers|length == 0 %}
+                    No one
+                {% endif %}
+                {% for liker in post.post_likers %}
+                    {% if post.post_likers|length == 1 %}
+                        {{ liker.username }}
+                    {% elif post.post_likers.index(liker) == (post.post_likers|length - 1) %}
+                        and {{ liker.username }}
+                    {% elif post.post_likers|length == 2 %}
+                        {{ liker.username }}
+                    {% else %}
+                        {{ liker.username }},
+                    {% endif %}
+                {% endfor %}
+                {% if post.post_likers|length == 1 %}
+                    likes this post
+                {% elif post.post_likers|length == 0 %}
+                    likes this post :(
+                {% else %}
+                    like this post
+                {% endif %}
+            </span>
+            <br>
+            {% if current_user.is_liking(post) %}
+                <a href="{{ url_for('unlike', post_id=post.id) }}">Unlike</a>
+            {% else %}
+                <a href="{{ url_for('like', post_id=post.id) }}">Like</a>
+            {% endif %}
+            this post
+        </td>
+    </tr>
+</table>
