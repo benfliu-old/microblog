@@ -58,3 +58,7 @@ jinja2.exceptions.TemplateSyntaxError: Encountered unknown tag 'endblock'. You p
 2020-05-13 19:01:39,444 INFO: Microblog startup [in /Users/benliu/PycharmProjects/microblog/app/__init__.py:59]
 2020-05-13 19:14:45,130 INFO: Microblog startup [in /Users/benliu/PycharmProjects/microblog/app/__init__.py:59]
 2020-05-13 19:16:44,574 INFO: Microblog startup [in /Users/benliu/PycharmProjects/microblog/app/__init__.py:59]
+2020-05-13 19:55:21,082 INFO: Microblog startup [in /Users/benliu/PycharmProjects/microblog/app/__init__.py:59]
+2020-05-13 19:55:21,083 INFO: Microblog startup [in /Users/benliu/PycharmProjects/microblog/app/__init__.py:59]
+2020-05-13 19:55:21,088 INFO: Microblog startup [in /Users/benliu/PycharmProjects/microblog/app/__init__.py:59]
+2020-05-13 19:55:21,116 INFO: Microblog startup [in /Users/benliu/PycharmProjects/microblog/app/__init__.py:59]
